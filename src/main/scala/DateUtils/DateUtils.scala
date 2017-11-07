@@ -5,13 +5,7 @@ import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.{FileSystem, Path}
 import org.apache.spark.deploy.SparkHadoopUtil
 
-/**
-  * Created with IntelliJ IDEA.
-  * Description:
-  * Author: lihongjie
-  * Date: 2017-11-04
-  * Time: 下午2:36
-  */
+
 object DateUtilst {
   def main(args: Array[String]): Unit = {
     val conf=new Configuration()
