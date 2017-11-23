@@ -18,7 +18,7 @@ object DateUtilst {
   }
 
   def changeFileName(fileSystem: FileSystem, outputPath: String, loadTime: String, partition: String): Unit = {
-    val paths = SparkHadoopUtil.get.globPath(new Path(outputPath + "temp/" + loadTime + partition + "/*.txt"))
+    val paths: Seq[Path] = SparkHadoopUtil.get.globPath(new Path(outputPath + "temp/" + loadTime + partition + "/*.txt"))
     var times = 0
     paths.map(x => {
       println("--kakg")
@@ -30,9 +30,14 @@ object DateUtilst {
       newLocation = newLocation.substring(0, index + 1) + loadTime + "-" + times + ".txt"
       println("2:"+newLocation)
       val officialPath = new Path(newLocation)
-      if (!fileSystem.exists(officialPath.getParent))
+      if (!fileSystem.exists(officialPath.getParent)) {
         fileSystem.mkdirs(officialPath.getParent)
+
+      }
+
       fileSystem.rename(x, officialPath)
+
+
     })
   }
 }

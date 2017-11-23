@@ -90,7 +90,13 @@
             <artifactId>spark-streaming-kafka-0-10_2.11</artifactId>
             <version>${spark.version}</version>
         </dependency>
-
+        <!--spark_ftp-->
+        <!-- list of dependencies -->
+        <dependency>
+            <groupId>com.springml</groupId>
+            <artifactId>spark-sftp_2.11</artifactId>
+            <version>1.1.1</version>
+        </dependency>
 
 
     </dependencies>
