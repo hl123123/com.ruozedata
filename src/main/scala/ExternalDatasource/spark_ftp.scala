@@ -11,7 +11,7 @@ object spark_ftp {
       format("com.springml.spark.sftp").
       option("host", "localhost").
       option("username", "shuke").
-      option("password", "zhanglei0804.").
+      option("password", "***").
       option("fileType", "csv").
       option("delimiter", ",").
       option("inferSchema", "true").
@@ -21,7 +21,7 @@ object spark_ftp {
     df.write.format("com.springml.spark.sftp").
       option("host", "localhost").
       option("username", "shuke").
-      option("password", "zhanglei0804.").
+      option("password", "***").
       option("fileType", "csv").
       option("delimiter", ";").
       option("inferSchema", "true").
